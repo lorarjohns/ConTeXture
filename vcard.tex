@@ -1,0 +1,92 @@
+% latin modern font: \usepackage or install .otf files directly on mac: https://www.ctan.org/tex-archive/fonts/lm/fonts/opentype/public/lm
+% sourcecode pro: you probably already have it if you have pimped out your .zsh, but you can also install directly from GitHub or Google:
+% https://github.com/adobe-fonts/source-code-pro/tree/release/OTF or https://fonts.google.com/specimen/Source+Code+Pro
+% Fontawesome: install the package with the TeX live manager or you can grab from here and manually install in the right dir: 
+% https://fontawesome.com/v4.7.0/icons/
+
+% Use LuaLaTeX or XeLaTeX or you will have a Bad Time
+
+\documentclass[10pt,oneside,final]{article}
+\usepackage{tikz}
+\usepackage[paperwidth=2in,paperheight=3.5in,margin=0cm,noheadfoot]{geometry}
+
+\setlength{\baselineskip}{0cm} 
+\setlength{\topskip}{0pt} 
+\usepackage{parskip} 
+
+\usepackage{fontspec}          
+\usepackage{fontawesome} % make sure this is installed. I really wanted devicons, too, but I was too lazy to turn svgs>pngs...
+
+%\usepackage{lmodern} % you don't REALLY need this, if you're on a mac and you have the fonts installed in Font Book, but whatevs
+%\renewcommand{\familydefault}{\sfdefault} %% if you want the base font to be ***sans serif***, uncomment this line!
+
+% obey my font desires
+\setmainfont{lmroman17-regular}
+\setmonofont{sourcecodepro}
+
+%\newcommand*{\devicon}{\fontfamily{devicon}\selectfont}
+
+\usetikzlibrary{matrix,positioning,calc}
+
+\usepackage{xcolor}                        % MOAR COLORS
+
+\definecolor{claret}{HTML}{820535}   % I messed around with https://coolors.co to find stuff I liked
+\definecolor{gunmetal}{HTML}{15212E}     
+\definecolor{outerspace}{HTML}{3F4954} 
+\definecolor{trolleygrey}{HTML}{83827D}
+\definecolor{manatee}{HTML}{969BA1}
+
+%  global 
+\makeatletter
+\newcommand{\globalcolor}[1]{%
+  \color{#1}\global\let\default@color\current@color
+}
+\makeatother
+\AtBeginDocument{\globalcolor{gunmetal}}
+
+\begin{document}
+  \thispagestyle{empty}
+  \vspace*{\fill}
+  \begin{center}
+    \begin{tikzpicture}
+
+\newlength{\seplinewidth}    \setlength{\seplinewidth}{2.25cm}
+\newlength{\seplineheight}   \setlength{\seplineheight}{1pt}
+\newlength{\seplinedistance} \setlength{\seplinedistance}{0.3cm}
+      
+ \matrix[every node/.style={anchor=center,font=\huge},anchor=center] (name) {
+  \node{Lora Johns}; \\
+ % \node{Johns}; \\
+  \node{\color{outerspace}\normalsize\textit{data science}}; \\
+  \node{\color{trolleygrey}\small\textit{they/them}}; \\
+};
+
+\node[below=\seplinedistance of name] (hl1) {};
+\draw[line width=\seplineheight,color=claret] (hl1)++(-\seplinewidth/2,0)
+  -- ++(\seplinewidth,0);
+
+\matrix [below=\seplinedistance of hl1,
+         column 1/.style={anchor=center,color=claret},
+         column 2/.style={anchor=west}] (contact) {
+  \node{\faGlobe}; &\node{lorajohns.com}; \\ 
+  \node{\faMedium};&\node{@lorajohns}; \\
+  \node{\faGithub}; &\node{lorarjohns}; \\ 
+  \node{\faLinkedin};&\node{lora-johns}; \\
+};
+
+\node[below=\seplinedistance of contact] (hl2) {};
+\draw[line width=\seplineheight,color=claret] (hl2)++(-\seplinewidth/2,0)
+  -- ++(\seplinewidth,0);
+  
+\matrix [below=\seplinedistance of hl2,
+        every node/.style={anchor=center}]
+         (interests) {
+ \node{\faTerminal}; & \node{\faDatabase}; &
+ \node{\faCommentsO};  & 
+ \node{\faCodeFork}; & \node{\faTransgenderAlt};\\
+};
+
+    \end{tikzpicture}
+  \end{center}
+  \vspace*{\fill}
+\end{document}  
