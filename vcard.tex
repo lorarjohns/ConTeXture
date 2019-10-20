@@ -6,7 +6,7 @@
 
 % Use LuaLaTeX or XeLaTeX or you will have a Bad Time
 
-\documentclass[10pt,oneside,final]{article}
+\documentclass[10pt,oneside,final]{article} %upped from 10pt for printing
 \usepackage{tikz}
 \usepackage[paperwidth=2in,paperheight=3.5in,margin=0cm,noheadfoot]{geometry}
 
@@ -17,14 +17,14 @@
 \usepackage{fontspec}          
 \usepackage{fontawesome} % make sure this is installed. I really wanted devicons, too, but I was too lazy to turn svgs>pngs...
 
-%\usepackage{lmodern} % you don't REALLY need this, if you're on a mac and you have the fonts installed in Font Book, but whatevs
+\usepackage{lmodern} % you don't REALLY need this, if you're on a mac and you have the fonts installed in Font Book, but whatevs
 %\renewcommand{\familydefault}{\sfdefault} %% if you want the base font to be ***sans serif***, uncomment this line!
 
 % obey my font desires
-\setmainfont{lmroman17-regular}
+%\setmainfont{lmroman17-regular}
 \setmonofont{sourcecodepro}
 
-%\newcommand*{\devicon}{\fontfamily{devicon}\selectfont}
+\newcommand*{\devicon}{\fontfamily{devicon}\selectfont}
 
 \usetikzlibrary{matrix,positioning,calc}
 
@@ -32,9 +32,10 @@
 
 \definecolor{claret}{HTML}{820535}   % I messed around with https://coolors.co to find stuff I liked
 \definecolor{gunmetal}{HTML}{15212E}     
-\definecolor{outerspace}{HTML}{3F4954} 
-\definecolor{trolleygrey}{HTML}{83827D}
-\definecolor{manatee}{HTML}{969BA1}
+%\definecolor{outerspace}{HTML}{3F4954} 
+%\definecolor{trolleygrey}{HTML}{83827D} % does not print well, apparently
+%\definecolor{manatee}{HTML}{969BA1}
+\definecolor{richblack}{HTML}{080705}
 
 %  global 
 \makeatletter
@@ -57,8 +58,8 @@
  \matrix[every node/.style={anchor=center,font=\huge},anchor=center] (name) {
   \node{Lora Johns}; \\
  % \node{Johns}; \\
-  \node{\color{outerspace}\normalsize\textit{data science}}; \\
-  \node{\color{trolleygrey}\small\textit{they/them}}; \\
+  \node{\color{richblack}\large{data science}}; \\
+  \node{\color{richblack!87}\normalsize{they/them}}; \\
 };
 
 \node[below=\seplinedistance of name] (hl1) {};

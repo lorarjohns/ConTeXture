@@ -1,0 +1,10 @@
+apt-utils
+texlive-latex-base
+texlive-latex-recommended
+texlive-science
+texlive-latex-extra
+texlive-fonts-recommended
+dvipng
+fonts-font-awesome
+ghostscript
+inkscape

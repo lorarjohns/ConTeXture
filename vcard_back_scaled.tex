@@ -1,4 +1,4 @@
-\documentclass[10pt,oneside,final]{article}
+\documentclass[12pt,oneside,final]{article} %up from 10pt
 \usepackage{tikz}
 \usepackage[paperwidth=2in,paperheight=3.5in,noheadfoot]{geometry}
 \usepackage{textcomp}
@@ -9,11 +9,12 @@
 
 \usepackage{fontspec}          % load external fonts
 \usepackage{fontawesome}
+\usepackage{lmodern}
 
-\setmainfont{lmroman17-regular}
+%\setmainfont{lmroman17-regular}
 \setmonofont{sourcecodepro}
 
-\newcommand*{\devicon}{\fontfamily{devicon}\selectfont}
+%\newcommand*{\devicon}{\fontfamily{devicon}\selectfont}
 
 \usetikzlibrary{matrix,positioning,calc}
 
@@ -27,10 +28,8 @@
 \definecolor{black}{HTML}{000000}    
 \definecolor{claret}{HTML}{820535}   
 \definecolor{gunmetal}{HTML}{15212E}    
-\definecolor{outerspace}{HTML}{3F4954} 
-\definecolor{trolleygrey}{HTML}{83827D}
-\definecolor{manatee}{HTML}{969BA1}
 \definecolor{chalice}{HTML}{B0AFAC}
+\definecolor{richblack}{HTML}{080705}
 
 \makeatletter
 \newcommand{\globalcolor}[1]{%
@@ -44,27 +43,27 @@
   \vspace*{\fill}
   \begin{tikzpicture}[remember picture,overlay,inner sep=0pt]
   
-	\node (rec) [shape=rectangle, fill=gunmetal!30, minimum width=2in, minimum height=3.5in, anchor=center] at (current page.center) {};
+	\node (rec) [shape=rectangle, fill=gunmetal!5, minimum width=2in, minimum height=3.5in, anchor=center] at (current page.center) {};
 	\node [shape=rectangle, draw=gunmetal, minimum width=2in-0.42in, minimum height=3.5in-0.51in, anchor=center] at (current page.center) {};
-    \node (pylogo) [above=1.5cm of rec.center] {\includegraphics[width=\logowidth]{pylogo}}; 
+    \node (pylogo) [above=1.5cm of rec.center] {\includegraphics[width=\logowidth]{pylogo2}}; 
 	
 \fontsize{5}{5}\selectfont
 \matrix (helloworld) [below=0.75cm of pylogo.south,
-	column 1/.style={color=trolleygrey}] {
-  \node{{\fontspec{Source Code Pro Light}{\textgreater\textgreater python \textendash c \textquotesingle import \textunderscore\textunderscore hello\textunderscore\textunderscore\textquotesingle}}}; \\
+	column 1/.style={color=richblack!87}] {
+  \node{{\fontspec{Source Code Pro}{\textdollar\space python \textendash c \textquotesingle import \textunderscore\textunderscore hello\textunderscore\textunderscore\textquotesingle}}}; \\
 };
 
 \node[below=2.5cm of pylogo.center]
   {\qrcode[level=M,height=\qrheight]{BEGIN:VCARD
 VERSION:3.0
-N:Lora;Johns;;Mx.
-FN:Mx. Lora Johns
-TITLE:Data Scientist
-GENDER:None
-TEL;TYPE=MOBILE:+1 203 908 6990
-EMAIL:me@lorajohns.com
-URL:https://lorajohns.com
-NOTE:Professional skills: Python, pandas, numpy, scikit-learn, R, NLP, SQL, machine and deep learning, and DevOps, inter alia. Education: J.D. Yale; M.L.I.S. Simmons; B.A. Dartmouth (Linguistics); Data Science certificate, Flatiron School. Interests: To name a few, the intersection of language and math; ethical and introspective work in deep learning; circus arts; community leadership; and outdoorsmanship.
+N:
+FN:
+TITLE:
+GENDER:
+TEL;TYPE=MOBILE:
+EMAIL:
+URL:
+NOTE:
 END:VCARD}};
 	
  \end{tikzpicture}
