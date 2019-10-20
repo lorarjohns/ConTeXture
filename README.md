@@ -44,7 +44,7 @@ There are a ton of easy resume generators out there, and I can print cards at St
 * Stands out visually from the sea of resumes!
 * Good for freelancers, people who've taken a hiatus, or others with a nonlinear job history
 
-![time is an illusion](time.png)
+![time is an illusion](Ltime.png)
 
 _what even is time_
 
