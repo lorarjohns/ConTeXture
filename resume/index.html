@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Load the JS file -->
+<!-- ... -->
+</head>
+<body>
+<!-- DOM element in which we'll mount our graph -->
+  <div id="graph-container"></div>
+   <!-- Use the `GitgraphJS` global variable to create your graph -->
+  <script src="./index.js"></script>
+<script>
+var svgData = $("#figureSvg")[0].outerHTML;
+var svgBlob = new Blob([svgData], {type:"image/svg+xml;charset=utf-8"});
+var svgUrl = URL.createObjectURL(svgBlob);
+var downloadLink = document.createElement("a");
+downloadLink.href = svgUrl;
+downloadLink.download = "tree.svg";
+downloadLink.click();
+</script>
+</body>
+</html>

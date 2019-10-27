@@ -34,6 +34,9 @@ that jazz up your job history.
 * It [optionally] uses **Docker** to install TeX and Inkscape in a virtual environment
 * Its **command line interface** simplifies the hard parts
 * Keep a git repo of your job history and generate beautiful documents with **bibTeX**
+* If you {{:heart:}} braces, then get your fill of coding pretty things in **JavaScript**! :sparkles:
+
+![yes, this is my job history](resume/img/compact.png)
 
 ## Usage
 
@@ -79,7 +82,7 @@ END:VCARD}};
 
 _'graphic design is my passion' but seriously, art + code is very therapeutic._
 
-## Packages and libraries
+## Languages, Packages and libraries
 
 * LaTeX
 * TeXshop (or TeXlive)
@@ -89,6 +92,9 @@ _'graphic design is my passion' but seriously, art + code is very therapeutic._
 * matrix, positioning, calc
 * qrcode
 * xcolor
+* JavaScript, npm, node
+* [gitgraph.js](http://gitgraphjs.com)
+
 
 ## Install
 
@@ -113,7 +119,15 @@ $ git clone https://github.com/lorarjohns/ConTeXture.git
 
 1. Make sure you have the requirements in the environment file installed. The LaTeX installation with LuaLaTeX or XeLaTeX, a vector graphic (or raster graphic) editor, and the necessary configuration can take a bit of time to set up. Make sure to submit any issues.
 2. Install [FontAwesome](https://fontawesome.com/v4.7.0/icons/) if you want the icons as pictured on the front of the card. 
-3. Make sure Docker is running if you're using the optional image
+3. To render images from JavaScript files, you can use something like headless Chrome:
+
+```bash
+"/Applications/Google \Chrome.app/Contents/MacOS/Google \Chrome" --headless --screenshot --window-size=256,256 --default-background-color=0 index.html
+```
+
+Or, you can right-click on the image and save the SVG path from the source (and edit it in Inkscape if you're feeling fancy).
+
+4. Make sure Docker is running if you're using the optional image
 
 ## Issues
 
