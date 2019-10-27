@@ -36,7 +36,7 @@ that jazz up your job history.
 * Keep a git repo of your job history and generate beautiful documents with **bibTeX**
 * If you {{:heart:}} braces, then get your fill of coding pretty things in **JavaScript**! :sparkles:
 
-![yes, this is my job history](resume/img/compact.png)
+<img src="https://github.com/lorarjohns/ConTeXture/blob/master/resume/img/compact.png" height="400px">
 
 ## Usage
 
